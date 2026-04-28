@@ -7,6 +7,7 @@ import {
 
 import StatCard from '../components/StatCard.jsx';
 import UKMap from '../components/UKMap.jsx';
+import HeadlineStats from '../components/HeadlineStats.jsx';
 
 export default function Home() {
   return (
@@ -48,6 +49,9 @@ export default function Home() {
           </aside>
         </div>
       </section>
+
+      {/* ---- HEADLINE STATS — big numbers band ---- */}
+      <HeadlineStats />
 
       {/* ---- THE SCALE OF THE NEED ---- */}
       <section className="section section--alt">
@@ -296,4 +300,68 @@ export default function Home() {
             <div className="atlas-mini__copy">
               <p className="eyebrow">Sister platform</p>
               <h3>Powered by Property Atlas.</h3>
-        
+              <p>
+                Atlas is the platform our sister organisation built to run
+                supported housing at scale. Every property, every refurb, every
+                gas / electric / fire certificate, every spend against budget
+                &mdash; one source of truth for the investor, the operator and
+                the commissioner.
+              </p>
+              <a className="btn btn--outline" href="https://atlas.impactig.co.uk" target="_blank" rel="noreferrer">
+                Visit Property Atlas <ArrowUpRight size={16} />
+              </a>
+            </div>
+
+            <div className="atlas-mini__viz" aria-hidden="true">
+              <div className="atlas-mini__rows">
+                <div className="atlas-mini__row">
+                  <span className="atlas-mini__dot atlas-mini__dot--ok" />
+                  <span className="atlas-mini__name">14 Belgrave Cres &middot; gas cert</span>
+                  <span className="atlas-mini__pill atlas-mini__pill--ok">In date</span>
+                </div>
+                <div className="atlas-mini__row">
+                  <span className="atlas-mini__dot atlas-mini__dot--warn" />
+                  <span className="atlas-mini__name">28 Lockwood Rd &middot; refurb</span>
+                  <span className="atlas-mini__pill atlas-mini__pill--warn">Wk 4 of 6</span>
+                </div>
+                <div className="atlas-mini__row">
+                  <span className="atlas-mini__dot atlas-mini__dot--ok" />
+                  <span className="atlas-mini__name">7 Marlowe Way &middot; reactive job</span>
+                  <span className="atlas-mini__pill atlas-mini__pill--ok">In SLA</span>
+                </div>
+                <div className="atlas-mini__row">
+                  <span className="atlas-mini__dot atlas-mini__dot--ok" />
+                  <span className="atlas-mini__name">21 Whitlock St &middot; spend</span>
+                  <span className="atlas-mini__pill atlas-mini__pill--ok">−4% vs budget</span>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      {/* ---- CLOSING CTA ---- */}
+      <section className="section">
+        <div className="container">
+          <article className="cta-banner">
+            <div>
+              <p className="eyebrow">Start a conversation</p>
+              <h3>
+                Whether you commission, refer, partner or invest &mdash; let&rsquo;s talk.
+              </h3>
+              <p>
+                Local authorities, NHS Trusts, charities, registered providers
+                and ethical investors &mdash; if our work fits your model, we
+                respond to all enquiries within one working day.
+              </p>
+            </div>
+            <div className="cta-banner__actions">
+              <Link className="btn btn--gold" to="/contact">Talk to us <ArrowRight size={16} /></Link>
+              <Link className="btn btn--ghost" to="/services">See our services</Link>
+            </div>
+          </article>
+        </div>
+      </section>
+    </>
+  );
+}
