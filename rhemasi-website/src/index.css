@@ -1652,3 +1652,93 @@ hr { border: 0; height: 1px; background: var(--line); margin: var(--s-6) 0; }
 
 /* badge logo / map svg keep block */
 .uk-map__svg, .rh-logo-badge-img { display: block; }
+
+/* ==== UK map LAYOUT REWORK ==== */
+.uk-map { display: grid; gap: var(--s-5); }
+
+/* chips row across the top — all 12 regions, wrap as needed */
+.uk-map__chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+}
+.uk-map__chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 13px;
+  color: var(--ink-soft);
+  cursor: pointer;
+  transition: background var(--t-fast) var(--ease),
+              color var(--t-fast) var(--ease),
+              border-color var(--t-fast) var(--ease),
+              transform var(--t-fast) var(--ease);
+}
+.uk-map__chip:hover { transform: translateY(-1px); border-color: var(--line-strong); }
+.uk-map__chip.is-active { background: var(--primary); color: var(--on-primary); border-color: var(--primary); }
+.uk-map__chip.is-pinned { background: var(--gold); color: var(--primary-dark); border-color: var(--gold); }
+.uk-map__chip-trend { display: inline-flex; color: var(--ink-mute); }
+.uk-map__chip.is-active .uk-map__chip-trend,
+.uk-map__chip.is-pinned .uk-map__chip-trend { color: inherit; }
+.uk-map__chip-num { font-weight: 700; color: var(--primary); }
+.uk-map__chip.is-active .uk-map__chip-num { color: var(--gold-light); }
+.uk-map__chip.is-pinned .uk-map__chip-num { color: var(--primary-dark); }
+
+/* map + panel: map gets the lion's share */
+.uk-map__layout {
+  display: grid;
+  grid-template-columns: 1.8fr 1fr;
+  gap: var(--s-6);
+  align-items: stretch;
+}
+@media (max-width: 980px) { .uk-map__layout { grid-template-columns: 1fr; } }
+
+.uk-map__svg-wrap {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--r-lg);
+  padding: var(--s-4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.uk-map__svg {
+  display: block;
+  width: 100%;
+  max-width: 640px;
+  height: auto;
+}
+
+/* Panel sized to map height, no internal quicklist anymore */
+.uk-map__panel {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--r-lg);
+  padding: var(--s-6);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+.uk-map__panel.is-visible { border-color: var(--gold); box-shadow: var(--shadow-md); }
+.uk-map__panel::before {
+  content: '';
+  position: absolute;
+  right: -60px; top: -60px;
+  width: 180px; height: 180px;
+  background: var(--gold);
+  border-radius: 50%;
+  opacity: 0.08;
+  pointer-events: none;
+}
+
+/* hide the legacy quicklist if it sneaks in (cleanup) */
+.uk-map__quicklist { display: none; }
