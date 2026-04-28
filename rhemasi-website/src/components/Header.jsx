@@ -22,7 +22,7 @@ export default function Header() {
     <header className="rh-nav">
       <div className="container rh-nav__inner">
         <Link to="/" className="rh-logo-link" aria-label="Rhema Social Impact Group — home" onClick={() => setOpen(false)}>
-          <LogoBadge size={56} />
+          <LogoBadge size={80} />
         </Link>
 
         <nav aria-label="Primary">

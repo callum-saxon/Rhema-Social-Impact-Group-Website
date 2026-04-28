@@ -59,9 +59,9 @@ export default function Home() {
             <hr className="gold-rule" />
             <p className="lead">
               The figures below describe the people Rhema and our partners exist
-              to serve &mdash; families in B&amp;Bs, citizens stuck in hospital
+              to serve &mdash; families in B&amp;Bs, people stuck in hospital
               waiting for a safe place to live, children growing up in temporary
-              rooms, adults waiting on supported-housing lists.
+              rooms, adults waiting for supported housing.
             </p>
           </header>
 
@@ -97,13 +97,14 @@ export default function Home() {
         <div className="container">
           <header className="section-head reveal" style={{ maxWidth: 820 }}>
             <p className="eyebrow">Social impact investing</p>
-            <h2 className="display">Capital with a social purpose.</h2>
+            <h2 className="display">Investment that changes lives.</h2>
             <hr className="gold-rule" />
             <p className="lead">
-              We invite ethical investors to partner with us to deliver housing
-              that the state alone cannot supply at the pace it&rsquo;s needed.
-              Investors get a fixed return secured against tangible property;
-              vulnerable people get a safe, decent, supported home.
+              We&rsquo;re inviting ethical investors to help us provide housing
+              the country urgently needs &mdash; faster than the state can deliver
+              alone. Investors get a steady, predictable return secured against
+              real property, and vulnerable people get a safe, decent home with
+              the right support around them.
             </p>
           </header>
 
@@ -117,7 +118,7 @@ export default function Home() {
                 unsuitable B&amp;B and hostel accommodation. NHS patients ready
                 for discharge stay on wards because there&rsquo;s nowhere safe to
                 go. Vulnerable adults sit on supported-living waiting lists for
-                months. Public spend rises while outcomes worsen.
+                months. Public spending rises while real lives get harder.
               </p>
             </article>
 
@@ -125,24 +126,26 @@ export default function Home() {
               <div className="ps-card__icon"><Target size={22} /></div>
               <h3>What we do</h3>
               <p>
-                Rhema acquires, refurbishes, maintains and manages property to
-                a decent-homes-plus standard. We partner with registered
-                providers, charities and care providers to deliver supported
-                accommodation, family-assessment homes, step-down transitions
-                and 16-18 semi-independent placements &mdash; backed by Property
-                Atlas, our compliance and operations platform.
+                Rhema buys, refurbishes, maintains and manages homes to a
+                high standard. We work alongside housing associations,
+                charities and care providers to deliver supported homes,
+                family-assessment properties, step-down accommodation and
+                semi-independent placements for young people leaving care.
+                Everything is tracked through Property Atlas, our shared
+                operations platform.
               </p>
             </article>
 
             <article className="ps-card ps-card--how reveal" data-delay="240" style={{ transitionDelay: '240ms' }}>
               <div className="ps-card__icon"><Sparkles size={22} /></div>
-              <h3>How it fixes it</h3>
+              <h3>How we make a difference</h3>
               <p>
-                Patient capital + operational delivery + a registered-provider
-                partnership = supply at pace. Investors hold first charge on the
-                property and receive a fixed return; the local authority gets a
-                quicker, cheaper, safer placement; the citizen gets a home with
-                wrap-around support. The state spends less; the impact is real.
+                We bring together long-term investment, hands-on delivery,
+                and a trusted housing-association partner &mdash; and the result
+                is more homes, sooner. Investors get a secured stake and a
+                steady return. Local authorities get quicker, more affordable
+                placements. And the people moving in get a real home with the
+                right support around them.
               </p>
             </article>
           </div>
@@ -154,13 +157,13 @@ export default function Home() {
           <article className="invest-strip reveal">
             <div className="invest-strip__copy">
               <p className="eyebrow" style={{ color: 'var(--gold-light)' }}>For ethical investors</p>
-              <h2>A property fund that changes lives <em>and</em> earns a fixed return.</h2>
+              <h2>A fund that changes lives <em>and</em> earns a fair, predictable return.</h2>
               <p>
-                Through our supported-homes property fund, an investor club
-                with a social impact acquires a portfolio of properties that
-                house vulnerable individuals and families. Investors receive
-                first charge on each property and a fixed return on their
-                investment.
+                Through our supported-homes fund, a small group of like-minded
+                investors come together to acquire a portfolio of properties
+                that house vulnerable individuals and families. Each investor
+                has a secured stake in their property and a steady, predictable
+                return on their investment.
               </p>
               <Link className="btn btn--gold" to="/contact">
                 Talk to us about the fund <ArrowRight size={16} />
@@ -168,10 +171,10 @@ export default function Home() {
             </div>
 
             <ul className="invest-strip__bullets">
-              <li><ShieldCheck size={18} /> Investor first charge on each property</li>
-              <li><BarChart3 size={18} /> Fixed return, transparent reporting</li>
+              <li><ShieldCheck size={18} /> Each property held in your name, secured</li>
+              <li><BarChart3 size={18} /> Steady return, fully transparent reporting</li>
               <li><HeartHandshake size={18} /> Wrap-around support delivered with our charity partners</li>
-              <li><Building2 size={18} /> Decent-homes-plus standard on every refurb</li>
+              <li><Building2 size={18} /> Every home meets the decent-homes standard or better</li>
             </ul>
           </article>
         </div>
@@ -209,17 +212,17 @@ export default function Home() {
             <article className="service-tile reveal" data-delay="0" style={{ transitionDelay: '0ms' }}>
               <div className="service-tile__icon"><Building2 size={20} /></div>
               <h3>Property sourcing &amp; refurb</h3>
-              <p>Acquisition, refurb to decent-homes-plus standard, and ongoing planned + reactive maintenance.</p>
+              <p>Buying, refurbishing and maintaining homes to a high standard.</p>
             </article>
             <article className="service-tile reveal" data-delay="80" style={{ transitionDelay: '80ms' }}>
               <div className="service-tile__icon"><ShieldCheck size={20} /></div>
               <h3>Compliance &amp; reporting</h3>
-              <p>Statutory inspection schedules, certificate management and an investor-portal handoff for owners.</p>
+              <p>We track every inspection and certificate, and give owners a clear view of their property.</p>
             </article>
             <article className="service-tile reveal" data-delay="160" style={{ transitionDelay: '160ms' }}>
               <div className="service-tile__icon"><HandHeart size={20} /></div>
               <h3>Wrap-around support</h3>
-              <p>Mental health, addiction and trauma support; employment and training; tenancy-sustainment work.</p>
+              <p>Mental health, addiction and trauma support, employment and training, and help to keep tenancies going long-term.</p>
             </article>
           </div>
         </div>
@@ -276,20 +279,14 @@ export default function Home() {
           <article className="cta-banner reveal">
             <div>
               <p className="eyebrow">Start a conversation</p>
-              <h3>Whether you commission, refer, partner or invest &mdash; let&rsquo;s talk.</h3>
+              <h3>However we can help &mdash; let&rsquo;s talk.</h3>
               <p>
-                Local authorities, NHS Trusts, charities, registered providers
-                and ethical investors &mdash; if our work fits your model, we
-                respond to all enquiries within one working day.
+                Local authorities, NHS Trusts, charities, housing associations
+                or ethical investors &mdash; if what we do fits what you need,
+                we&rsquo;ll come back within one working day. No bots, no funnels,
+                just a real conversation.
               </p>
             </div>
             <div className="cta-banner__actions">
               <Link className="btn btn--gold" to="/contact">Talk to us <ArrowRight size={16} /></Link>
-              <Link className="btn btn--ghost" to="/services">See our services</Link>
-            </div>
-          </article>
-        </div>
-      </section>
-    </>
-  );
-}
+              <Link className="btn btn--ghost" to="/services">See our s                                                                                     

@@ -1943,3 +1943,47 @@ hr { border: 0; height: 1px; background: var(--line); margin: var(--s-6) 0; }
   transition: color var(--t-fast) var(--ease), border-color var(--t-fast) var(--ease);
 }
 .uk-map__detail-clear:hover { color: var(--primary); border-color: var(--primary); }
+
+/* ==== UK map — final animation tweaks ==== */
+
+/* drop the prior back-and-forth pulse on the halo when pinned */
+.uk-map__pin.is-pinned .uk-map__halo {
+  opacity: 0.55;
+  animation: none;
+}
+
+/* outward-expanding ripple from the dot when pinned */
+.uk-map__ripple {
+  fill: none;
+  stroke: var(--gold-dark);
+  stroke-width: 2;
+  transform-origin: center;
+  transform-box: fill-box;
+  animation: rippleOut 2.2s ease-out infinite;
+  pointer-events: none;
+}
+@keyframes rippleOut {
+  0%   { transform: scale(0.5); opacity: 1; }
+  80%  { opacity: 0.15; }
+  100% { transform: scale(3.4);  opacity: 0; }
+}
+
+/* leader line "flows" from label to dot when pinned (dashed motion) */
+.uk-map__leader-line.is-pinned {
+  stroke: var(--gold-dark);
+  stroke-width: 2;
+  stroke-dasharray: 6 6;
+  animation: leaderFlow 1.5s linear infinite;
+}
+@keyframes leaderFlow {
+  to { stroke-dashoffset: -24; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .uk-map__ripple,
+  .uk-map__leader-line.is-pinned { animation: none; }
+}
+
+/* slightly larger header logo */
+.rh-logo-link img,
+.rh-logo-link svg { width: auto; height: auto; }

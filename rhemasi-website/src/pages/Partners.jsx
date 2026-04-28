@@ -116,7 +116,7 @@ export default function Partners() {
             <article className="card svc reveal" data-delay="120" style={{ transitionDelay: '120ms' }}>
               <div className="svc__icon"><Handshake size={20} /></div>
               <h3>NHS Trusts</h3>
-              <p>Step-down placements, MDT discharge planning, integrated CMHT working. Where NHS funding is in the picture, we make it visible to the panel.</p>
+              <p>Step-down placements and joined-up discharge planning with mental health teams. Where NHS funding is involved, we make sure the route to a tenancy is clear to the panel.</p>
             </article>
             <article className="card svc reveal" data-delay="240" style={{ transitionDelay: '240ms' }}>
               <div className="svc__icon"><ShieldCheck size={20} /></div>
