@@ -1987,3 +1987,30 @@ hr { border: 0; height: 1px; background: var(--line); margin: var(--s-6) 0; }
 /* slightly larger header logo */
 .rh-logo-link img,
 .rh-logo-link svg { width: auto; height: auto; }
+
+/* ==== UK MAP — final polish: no box, larger visual, bigger labels ==== */
+.uk-map__svg-wrap {
+  background: transparent;
+  border: 0;
+  padding: 0;
+  margin: 0 auto var(--s-6);
+  max-width: 1200px;
+}
+.uk-map__svg {
+  width: 100%;
+  max-width: 1200px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+/* larger labels */
+.uk-map__label-name { font-size: 16px; font-weight: 600; }
+.uk-map__label-num  { font-size: 26px; font-weight: 700; letter-spacing: -0.02em; }
+
+/* slightly bolder country outline */
+.uk-map__country { stroke-width: 2; }
+
+/* dot/halo a bit larger to match scaled-up canvas */
+.uk-map__halo { transition: opacity var(--t-base) var(--ease); }
+.uk-map__dot  { stroke-width: 2; }
