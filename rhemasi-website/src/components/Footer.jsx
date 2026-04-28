@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { LogoMark } from './Logo.jsx';
+import { LogoFull } from './Logo.jsx';
 
 export default function Footer() {
   return (
@@ -7,12 +7,8 @@ export default function Footer() {
       <div className="container">
         <div className="footer__grid">
           <div>
-            <div className="rh-logo" style={{ marginBottom: 16 }}>
-              <LogoMark size={42} />
-              <div className="rh-logo__name">
-                <b style={{ color: 'var(--gold)' }}>Rhema</b>
-                <span style={{ color: 'rgba(239,232,218,0.6)' }}>Social Impact</span>
-              </div>
+            <div style={{ marginBottom: 16 }}>
+              <LogoFull size={48} mono />
             </div>
             <p style={{ fontSize: 14, lineHeight: 1.65, margin: 0, maxWidth: '36ch' }}>
               Property refurbishment, ongoing maintenance and management for the

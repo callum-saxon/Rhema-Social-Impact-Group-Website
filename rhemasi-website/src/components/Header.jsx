@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { NavLink, Link, useLocation } from 'react-router-dom';
 import { Mail, Menu, X } from 'lucide-react';
-import { LogoMark } from './Logo.jsx';
+import { LogoFull } from './Logo.jsx';
 
 const links = [
   { to: '/about',          label: 'About' },
@@ -22,12 +22,8 @@ export default function Header() {
   return (
     <header className="rh-nav">
       <div className="container rh-nav__inner">
-        <Link to="/" className="rh-logo" aria-label="Rhema Social Impact — home" onClick={() => setOpen(false)}>
-          <LogoMark size={44} />
-          <div className="rh-logo__name">
-            <b>Rhema</b>
-            <span>Social Impact</span>
-          </div>
+        <Link to="/" className="rh-logo-link" aria-label="Rhema Social Impact — home" onClick={() => setOpen(false)}>
+          <LogoFull size={48} />
         </Link>
 
         <nav aria-label="Primary">
