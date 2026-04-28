@@ -233,17 +233,18 @@ hr { border: 0; height: 1px; background: var(--line); margin: var(--s-6) 0; }
 .rh-logo-full__brand {
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: clamp(22px, 2.6vw, 30px);
-  letter-spacing: -0.025em;
+  font-size: clamp(26px, 2.8vw, 34px);
+  letter-spacing: -0.03em;
   line-height: 1;
 }
 .rh-logo-full__tag {
   font-family: var(--font-display);
   font-weight: 400;
   font-size: clamp(11px, 1.05vw, 13px);
-  letter-spacing: 0.05em;
-  margin-top: 5px;
+  letter-spacing: 0.04em;
+  margin-top: 6px;
   line-height: 1;
+  white-space: nowrap;
 }
 .rh-logo-full__i {
   position: relative;
@@ -836,3 +837,280 @@ hr { border: 0; height: 1px; background: var(--line); margin: var(--s-6) 0; }
 .mt-3 { margin-top: var(--s-3); }
 .mt-4 { margin-top: var(--s-4); }
 .mt-6 { margin-top: var(--s-6); }
+
+/* ==========================================================================
+   23. New content patterns (stat grid, UK map, problem-solution,
+       investor strip, services tiles, atlas mini, animations)
+   ========================================================================== */
+
+/* --- 23a. Stat grid + StatCard --------------------------------------- */
+.stat-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--s-5);
+}
+@media (max-width: 1100px) { .stat-grid { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 900px)  { .stat-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 560px)  { .stat-grid { grid-template-columns: 1fr; } }
+
+.stat-card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--r-lg);
+  padding: var(--s-5);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition: transform var(--t-base) var(--ease),
+              box-shadow var(--t-base) var(--ease),
+              border-color var(--t-base) var(--ease);
+}
+.stat-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); border-color: var(--line-strong); }
+.stat-card__icon {
+  width: 40px; height: 40px;
+  border-radius: 10px;
+  display: grid; place-items: center;
+  background: var(--surface-tint);
+  color: var(--primary);
+}
+.stat-card__num {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(30px, 3vw, 40px);
+  color: var(--primary);
+  letter-spacing: -0.03em;
+  line-height: 1;
+  margin: 4px 0 0;
+}
+.stat-card__label {
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--ink-soft);
+  margin: 0;
+}
+.stat-card__src {
+  margin: auto 0 0;
+  font-family: var(--font-display);
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+}
+.stat-card__src a { color: var(--gold-dark); text-decoration: underline; text-decoration-color: rgba(201, 136, 91, 0.4); text-underline-offset: 3px; }
+.stat-card__src a:hover { color: var(--primary); text-decoration-color: var(--primary); }
+
+/* peach-accented stat card variant */
+.stat-card--accent {
+  background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+  border-color: transparent;
+  color: var(--primary-dark);
+}
+.stat-card--accent .stat-card__icon { background: rgba(255, 255, 255, 0.35); color: var(--primary-dark); }
+.stat-card--accent .stat-card__num   { color: var(--primary-dark); }
+.stat-card--accent .stat-card__label { color: rgba(14, 36, 71, 0.82); }
+.stat-card--accent .stat-card__src   { color: rgba(14, 36, 71, 0.7); }
+.stat-card--accent .stat-card__src a { color: var(--primary-dark); text-decoration-color: rgba(14, 36, 71, 0.4); }
+
+/* --- 23b. UK map ------------------------------------------------------ */
+.uk-map {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: var(--s-7);
+  align-items: center;
+}
+@media (max-width: 900px) { .uk-map { grid-template-columns: 1fr; } }
+.uk-map svg { width: 100%; height: auto; max-width: 480px; margin: 0 auto; display: block; }
+.uk-map__land {
+  fill: var(--surface-tint);
+  stroke: var(--primary-soft);
+  stroke-width: 1.5;
+  opacity: 0.9;
+}
+.uk-map__pin { cursor: pointer; outline: none; }
+.uk-map__halo {
+  fill: var(--gold);
+  opacity: 0;
+  transition: opacity var(--t-base) var(--ease);
+}
+.uk-map__dot {
+  fill: var(--primary);
+  stroke: #fff;
+  stroke-width: 2;
+  transition: fill var(--t-base) var(--ease), transform var(--t-base) var(--ease);
+  transform-origin: center;
+  transform-box: fill-box;
+}
+.uk-map__pin:hover .uk-map__halo,
+.uk-map__pin.is-active .uk-map__halo,
+.uk-map__pin:focus-visible .uk-map__halo { opacity: 0.35; }
+.uk-map__pin:hover .uk-map__dot,
+.uk-map__pin.is-active .uk-map__dot,
+.uk-map__pin:focus-visible .uk-map__dot { fill: var(--gold-dark); transform: scale(1.1); }
+
+.uk-map__readout {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--r-lg);
+  padding: var(--s-6);
+  min-height: 220px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transition: border-color var(--t-base) var(--ease);
+}
+.uk-map__readout.is-visible { border-color: var(--gold); }
+.uk-map__readout-name {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin: 0 0 var(--s-2);
+}
+.uk-map__readout-num {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(40px, 5vw, 56px);
+  color: var(--primary);
+  letter-spacing: -0.03em;
+  line-height: 1;
+  margin: 0 0 var(--s-3);
+}
+.uk-map__readout-note {
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--ink-soft);
+  margin: 0 0 var(--s-3);
+}
+.uk-map__readout-src {
+  font-family: var(--font-display);
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+  margin: auto 0 0;
+}
+.uk-map__readout-src a { color: var(--gold-dark); }
+
+/* --- 23c. Problem / What we do / How it fixes ----------------------- */
+.problem-solution {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--s-5);
+}
+@media (max-width: 900px) { .problem-solution { grid-template-columns: 1fr; } }
+.ps-card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--r-lg);
+  padding: var(--s-6);
+  position: relative;
+  overflow: hidden;
+  transition: transform var(--t-base) var(--ease), box-shadow var(--t-base) var(--ease);
+}
+.ps-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); }
+.ps-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 4px;
+  background: var(--primary);
+}
+.ps-card--problem::before { background: var(--gold-dark); }
+.ps-card--what::before    { background: var(--primary); }
+.ps-card--how::before     { background: var(--gold); }
+.ps-card__icon {
+  width: 44px; height: 44px;
+  border-radius: 12px;
+  background: var(--surface-tint);
+  color: var(--primary);
+  display: grid; place-items: center;
+  margin-bottom: var(--s-4);
+}
+.ps-card--problem .ps-card__icon { background: rgba(232, 168, 124, 0.18); color: var(--gold-dark); }
+.ps-card h3 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 24px;
+  color: var(--primary);
+  letter-spacing: -0.02em;
+  margin: 0 0 var(--s-3);
+}
+.ps-card p { color: var(--ink-soft); line-height: 1.65; margin: 0; }
+
+/* --- 23d. Investor strip --------------------------------------------- */
+.invest-strip {
+  border-radius: var(--r-xl);
+  background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+  color: var(--on-primary);
+  padding: var(--s-7);
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: var(--s-7);
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+.invest-strip::before {
+  content: '';
+  position: absolute;
+  right: -120px; top: -120px;
+  width: 360px; height: 360px;
+  background: var(--gold);
+  border-radius: 50%;
+  opacity: 0.16;
+}
+.invest-strip__copy { position: relative; }
+.invest-strip h2 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(28px, 3.4vw, 40px);
+  letter-spacing: -0.02em;
+  color: var(--on-primary);
+  margin: 0 0 var(--s-3);
+  line-height: 1.15;
+}
+.invest-strip h2 em { font-style: normal; color: var(--gold-light); }
+.invest-strip p { color: rgba(248, 244, 237, 0.85); line-height: 1.65; margin: 0 0 var(--s-5); }
+.invest-strip__bullets {
+  list-style: none; margin: 0; padding: 0;
+  display: grid; gap: var(--s-3);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(232, 168, 124, 0.25);
+  border-radius: var(--r-lg);
+  padding: var(--s-5);
+  position: relative;
+}
+.invest-strip__bullets li {
+  display: flex; align-items: center; gap: 10px;
+  font-size: 14px;
+  color: var(--on-primary);
+  font-family: var(--font-display);
+  font-weight: 500;
+}
+.invest-strip__bullets svg { color: var(--gold-light); flex-shrink: 0; }
+@media (max-width: 900px) { .invest-strip { grid-template-columns: 1fr; } }
+
+/* --- 23e. Services tiles --------------------------------------------- */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--s-5);
+}
+@media (max-width: 900px) { .services-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 560px) { .services-grid { grid-template-columns: 1fr; } }
+.service-tile {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--r-lg);
+  padding: var(--s-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-3);
+  transition: transform var(--t-base) var(--ease), box-shadow var(--t-base) var(--ease), border-color var(--t-base) var(--ease);
+}
+.service-tile:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); border-color: var(--gold); }
+.service-tile__icon {
+  width: 44px; height: 44px;
+  border-radius: 12p
