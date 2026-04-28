@@ -1,14 +1,25 @@
 /**
  * Rhema Social Impact — logo components.
  *
- * <LogoMark />     The compact square mark — used in headers and footers.
- *                  Forest green tile, white "R", gold dot accent.
+ * <LogoMark />     The compact figure cluster — used in headers and footers.
+ *                  Three navy stylised figures with the peach tie-in dot accent.
  *
- * <LogoFigures />  The full graphic mark — three stylised figures with the
- *                  shared gold tie-in dot. Used inline in hero / brand panels.
- *                  Matches the supplied Rhema brandmark.
+ * <LogoFigures />  The full graphic mark — three rounded human figures.
+ *                  Used inline in hero / brand panels. Larger version of the
+ *                  same mark, sized for display.
+ *
+ * Colours come from the CSS variables --primary (navy) and --gold (peach),
+ * which are defined in src/index.css. Hex fallbacks are provided for SVGs
+ * that may render outside a CSS context.
  */
 
+const NAVY = '#1A3A6B';
+const PEACH = '#E5A57B';
+
+/**
+ * Compact figure cluster — used at small sizes (header / footer).
+ * Square viewBox so it sits cleanly next to the wordmark text.
+ */
 export function LogoMark({ size = 44 }) {
   return (
     <svg
@@ -20,31 +31,58 @@ export function LogoMark({ size = 44 }) {
       aria-label="Rhema Social Impact"
       style={{ overflow: 'visible' }}
     >
-      {/* tile */}
-      <rect x="0" y="0" width="56" height="56" rx="10" fill="var(--primary, #1D4E3F)" />
-      {/* R */}
-      <text
-        x="28"
-        y="40"
-        textAnchor="middle"
-        fontFamily="'Cormorant Garamond', Georgia, serif"
-        fontSize="34"
-        fontWeight="600"
-        fill="var(--on-primary, #EFE8DA)"
-      >
-        R
-      </text>
-      {/* gold tie-in dot */}
-      <circle cx="55" cy="5" r="6" fill="var(--gold, #C9A84C)" />
-      <circle cx="55" cy="5" r="6" fill="none" stroke="var(--surface, #EFE8DA)" strokeWidth="2" />
+      {/* central figure (largest) */}
+      <g fill={`var(--primary, ${NAVY})`}>
+        <circle cx="30" cy="18" r="6.5" />
+        <path d="
+          M 30 26
+          C 22 26, 18 33, 17.5 43
+          C 17.2 49, 18.5 54, 20 56
+          L 40 56
+          C 41.5 54, 42.8 49, 42.5 43
+          C 42 33, 38 26, 30 26
+          Z
+        " />
+      </g>
+
+      {/* left figure */}
+      <g fill={`var(--primary, ${NAVY})`} opacity="0.9">
+        <circle cx="11" cy="25" r="5" />
+        <path d="
+          M 11 32
+          C 5 32, 2 38, 1.5 46
+          C 1.3 51, 2 55, 3.5 56
+          L 18.5 56
+          C 19 55, 19.5 51, 19 46
+          C 18.5 38, 17 32, 11 32
+          Z
+        " />
+      </g>
+
+      {/* right figure */}
+      <g fill={`var(--primary, ${NAVY})`} opacity="0.9">
+        <circle cx="49" cy="25" r="5" />
+        <path d="
+          M 49 32
+          C 43 32, 41.5 38, 41 46
+          C 40.5 51, 41 55, 41.5 56
+          L 56.5 56
+          C 58 55, 58.7 51, 58.5 46
+          C 58 38, 55 32, 49 32
+          Z
+        " />
+      </g>
+
+      {/* peach tie-in dot accent */}
+      <circle cx="48" cy="6" r="4.5" fill={`var(--gold, ${PEACH})`} />
     </svg>
   );
 }
 
 /**
- * The figurative mark — three rounded human figures with shared gold dot.
- * Recreated from the supplied logo file as inline SVG so it scales cleanly,
- * inherits theme colours and avoids an extra HTTP request.
+ * The figurative mark — three rounded human figures with the shared peach
+ * tie-in dot. Recreated as inline SVG so it scales cleanly, inherits theme
+ * colours and avoids an extra HTTP request.
  */
 export function LogoFigures({ size = 200, ground = 'transparent' }) {
   return (
@@ -59,49 +97,9 @@ export function LogoFigures({ size = 200, ground = 'transparent' }) {
       <rect x="0" y="0" width="240" height="200" fill={ground} rx="20" />
 
       {/* central figure (largest) */}
-      <g fill="var(--primary, #1D4E3F)">
+      <g fill={`var(--primary, ${NAVY})`}>
         <circle cx="120" cy="62" r="22" />
         <path d="
           M 120 88
           C 96 88, 84 108, 82 134
-          C 81 152, 86 168, 92 178
-          L 148 178
-          C 154 168, 159 152, 158 134
-          C 156 108, 144 88, 120 88
-          Z
-        " />
-      </g>
-
-      {/* left figure */}
-      <g fill="var(--primary, #1D4E3F)" opacity="0.92">
-        <circle cx="58" cy="86" r="17" />
-        <path d="
-          M 58 106
-          C 40 106, 30 122, 28 144
-          C 27 158, 30 170, 35 178
-          L 81 178
-          C 86 170, 89 158, 88 144
-          C 86 122, 76 106, 58 106
-          Z
-        " />
-      </g>
-
-      {/* right figure */}
-      <g fill="var(--primary, #1D4E3F)" opacity="0.92">
-        <circle cx="182" cy="86" r="17" />
-        <path d="
-          M 182 106
-          C 164 106, 154 122, 152 144
-          C 151 158, 154 170, 159 178
-          L 205 178
-          C 210 170, 213 158, 212 144
-          C 210 122, 200 106, 182 106
-          Z
-        " />
-      </g>
-
-      {/* gold tie-in dot */}
-      <circle cx="156" cy="40" r="8" fill="var(--gold, #C9A84C)" />
-    </svg>
-  );
-}
+          C 81 152, 86 168, 92 1
