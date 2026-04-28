@@ -2,43 +2,19 @@ import { Link } from 'react-router-dom';
 import { ArrowRight, Clock, ShieldCheck } from 'lucide-react';
 
 const STEPS = [
-  {
-    n: '01',
-    h: 'Survey & spec',
-    p: 'Within 5 working days of the property exchange, we are on site. Survey, photos, condition report, refurb spec, draft schedule of works. Cohort fit confirmed with Elevate.',
-  },
-  {
-    n: '02',
-    h: 'Mobilisation',
-    p: 'Subcontractors briefed (electrician, plumber, joiner, decorator). Materials ordered. H&S RAMS produced and lodged in Atlas before any tools land on site.',
-  },
-  {
-    n: '03',
-    h: 'Refurb on site',
-    p: 'Average 4–8 weeks. Daily progress photos and budget burn updated in Atlas. Variations approved on-platform with a paper trail, never WhatsApp.',
-  },
-  {
-    n: '04',
-    h: 'Statutory sign-off',
-    p: 'Gas, EICR, EPC, fire risk assessment, legionella, building control where applicable. All certificates uploaded to Atlas at PC.',
-  },
-  {
-    n: '05',
-    h: 'Handover to Elevate',
-    p: 'Walk-through with Elevate&rsquo;s registered manager. Snag list closed within 14 days. Keys handed over. Citizen referral pathway opens.',
-  },
-  {
-    n: '06',
-    h: 'Ongoing operate',
-    p: 'Reactive maintenance SLA active from day one. Planned maintenance scheduled out 24 months. Property Atlas runs the schedule; we run the trades.',
-  },
+  { n: '01', h: 'Survey & spec',         p: 'Within 5 working days of the property exchange, we are on site. Survey, photos, condition report, refurb spec, draft schedule of works. Cohort fit confirmed with Elevate.' },
+  { n: '02', h: 'Mobilisation',          p: 'Subcontractors briefed (electrician, plumber, joiner, decorator). Materials ordered. H&S RAMS produced and lodged in Atlas before any tools land on site.' },
+  { n: '03', h: 'Refurb on site',        p: 'Average 4–8 weeks. Daily progress photos and budget burn updated in Atlas. Variations approved on-platform with a paper trail, never WhatsApp.' },
+  { n: '04', h: 'Statutory sign-off',    p: 'Gas, EICR, EPC, fire risk assessment, legionella, building control where applicable. All certificates uploaded to Atlas at PC.' },
+  { n: '05', h: 'Handover to Elevate',   p: 'Walk-through with Elevate&rsquo;s registered manager. Snag list closed within 14 days. Keys handed over. Citizen referral pathway opens.' },
+  { n: '06', h: 'Ongoing operate',       p: 'Reactive maintenance SLA active from day one. Planned maintenance scheduled out 24 months. Property Atlas runs the schedule; we run the trades.' },
 ];
 
 export default function Process() {
   return (
     <>
       <section className="page-head">
-        <div className="container">
+        <div className="container reveal">
           <p className="eyebrow">Our process</p>
           <h1 className="display">From keys-in-hand to citizen-in-residence — a six-step path.</h1>
           <p className="lead" style={{ maxWidth: 720 }}>
@@ -53,8 +29,8 @@ export default function Process() {
       <section className="section">
         <div className="container" style={{ display: 'grid', gridTemplateColumns: '1fr 280px', gap: 'var(--s-8)', alignItems: 'flex-start' }}>
           <div>
-            {STEPS.map(s => (
-              <article key={s.n} className="process-step">
+            {STEPS.map((s, i) => (
+              <article key={s.n} className="process-step reveal" data-delay={i * 80} style={{ transitionDelay: `${i * 80}ms` }}>
                 <div className="process-step__n">{s.n}</div>
                 <div>
                   <h3>{s.h}</h3>
@@ -64,7 +40,7 @@ export default function Process() {
             ))}
           </div>
 
-          <aside className="card" style={{ position: 'sticky', top: 100 }}>
+          <aside className="card reveal" style={{ position: 'sticky', top: 100 }}>
             <Clock size={22} color="var(--gold-dark)" style={{ marginBottom: 8 }} />
             <h3 style={{ fontFamily: 'var(--font-display)', fontSize: 22, color: 'var(--primary)', margin: '0 0 6px' }}>
               Typical timeline
@@ -89,7 +65,7 @@ export default function Process() {
       </section>
 
       <section className="section section--earth">
-        <div className="container center" style={{ maxWidth: 760, margin: '0 auto' }}>
+        <div className="container center reveal" style={{ maxWidth: 760, margin: '0 auto' }}>
           <p className="eyebrow">Ready to scope a project?</p>
           <h2 className="display" style={{ fontSize: 'clamp(28px, 3.6vw, 44px)' }}>
             Send us the address. We&rsquo;ll send you a survey slot.

@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { LogoFull } from './Logo.jsx';
+import { LogoBadge } from './Logo.jsx';
 
 export default function Footer() {
   return (
@@ -8,7 +8,7 @@ export default function Footer() {
         <div className="footer__grid">
           <div>
             <div style={{ marginBottom: 16 }}>
-              <LogoFull size={48} mono />
+              <LogoBadge size={64} />
             </div>
             <p style={{ fontSize: 14, lineHeight: 1.65, margin: 0, maxWidth: '36ch' }}>
               Property refurbishment, ongoing maintenance and management for the

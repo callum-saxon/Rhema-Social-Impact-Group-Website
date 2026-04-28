@@ -3,13 +3,13 @@ import {
   ArrowRight, AlertCircle, Heart, Home as HomeIcon,
   Users, Sparkles, Target,
 } from 'lucide-react';
-import { LogoFigures } from '../components/Logo.jsx';
+import { LogoBadge } from '../components/Logo.jsx';
 
 export default function About() {
   return (
     <>
       <section className="page-head">
-        <div className="container">
+        <div className="container reveal">
           <p className="eyebrow">About Rhema</p>
           <h1 className="display">
             Life-changing housing solutions, built on quality property work.
@@ -27,10 +27,10 @@ export default function About() {
 
       {/* ---- WHO WE ARE ---- */}
       <section className="section">
-        <div className="container" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 'var(--s-8)', alignItems: 'center' }}>
-          <div>
+        <div className="container about-who">
+          <div className="reveal">
             <p className="eyebrow">Who we are</p>
-            <h2 className="display" style={{ fontSize: 'clamp(28px, 3.6vw, 44px)', color: 'var(--primary)' }}>
+            <h2 className="display" style={{ fontSize: 'clamp(28px, 3.6vw, 44px)' }}>
               A property partner with a social purpose.
             </h2>
             <hr className="gold-rule" />
@@ -48,8 +48,8 @@ export default function About() {
               UK social-housing crisis — one property at a time.
             </p>
           </div>
-          <div style={{ display: 'grid', placeItems: 'center', padding: 'var(--s-6)', background: 'linear-gradient(135deg, var(--surface-2), var(--surface-3))', borderRadius: 'var(--r-xl)' }}>
-            <LogoFigures size={260} />
+          <div className="about-who__badge reveal" data-delay="120" style={{ transitionDelay: '120ms' }}>
+            <LogoBadge size={360} />
           </div>
         </div>
       </section>
@@ -57,7 +57,7 @@ export default function About() {
       {/* ---- THE PROBLEM ---- */}
       <section className="section section--earth">
         <div className="container">
-          <header className="section-head">
+          <header className="section-head reveal">
             <p className="eyebrow">The challenge</p>
             <h2 className="display" style={{ fontSize: 'clamp(28px, 3.6vw, 44px)' }}>
               A chronic shortage of suitable homes.
@@ -73,7 +73,7 @@ export default function About() {
             </p>
           </header>
 
-          <div className="stats">
+          <div className="stats reveal">
             <div>
               <p className="stat__num">227k</p>
               <p className="stat__label">People in the worst<br />forms of homelessness</p>
@@ -100,9 +100,9 @@ export default function About() {
       {/* ---- THE SOLUTION ---- */}
       <section className="section">
         <div className="container">
-          <header className="section-head">
+          <header className="section-head reveal">
             <p className="eyebrow">Our approach</p>
-            <h2 className="display">A holistic 360 housing &amp; support solution.</h2>
+            <h2 className="display">A holistic housing &amp; support solution.</h2>
             <hr className="gold-rule" />
             <p className="lead">
               We partner with local authorities, charities and housing associations
@@ -112,7 +112,7 @@ export default function About() {
           </header>
 
           <div className="grid-3">
-            <article className="card svc">
+            <article className="card svc reveal">
               <div className="svc__icon"><HomeIcon size={20} /></div>
               <h3>Housing with support</h3>
               <p>
@@ -121,7 +121,7 @@ export default function About() {
                 16–18 semi-independent homes for care leavers.
               </p>
             </article>
-            <article className="card svc">
+            <article className="card svc reveal" data-delay="120" style={{ transitionDelay: '120ms' }}>
               <div className="svc__icon"><Users size={20} /></div>
               <h3>Right-sized properties</h3>
               <p>
@@ -130,7 +130,7 @@ export default function About() {
                 safe, comfortable and appropriate home.
               </p>
             </article>
-            <article className="card svc">
+            <article className="card svc reveal" data-delay="240" style={{ transitionDelay: '240ms' }}>
               <div className="svc__icon"><Sparkles size={20} /></div>
               <h3>Property sourcing</h3>
               <p>
@@ -146,14 +146,14 @@ export default function About() {
       {/* ---- VALUES ---- */}
       <section className="section section--alt">
         <div className="container">
-          <header className="section-head">
+          <header className="section-head reveal">
             <p className="eyebrow">What we believe</p>
             <h2 className="display">Property work as care work.</h2>
             <hr className="gold-rule" />
           </header>
 
           <div className="grid-3">
-            <article className="card svc">
+            <article className="card svc reveal">
               <div className="svc__icon"><Heart size={20} /></div>
               <h3>People at the centre</h3>
               <p>
@@ -162,7 +162,7 @@ export default function About() {
                 magazine spread.
               </p>
             </article>
-            <article className="card svc">
+            <article className="card svc reveal" data-delay="120" style={{ transitionDelay: '120ms' }}>
               <div className="svc__icon"><Target size={20} /></div>
               <h3>Outcomes over outputs</h3>
               <p>
@@ -171,7 +171,7 @@ export default function About() {
                 whether the kitchen looks tidy on day one.
               </p>
             </article>
-            <article className="card svc">
+            <article className="card svc reveal" data-delay="240" style={{ transitionDelay: '240ms' }}>
               <div className="svc__icon"><AlertCircle size={20} /></div>
               <h3>Urgency without shortcuts</h3>
               <p>
@@ -184,12 +184,12 @@ export default function About() {
         </div>
       </section>
 
-      {/* ---- 360 model ---- */}
+      {/* ---- the full chain ---- */}
       <section className="section">
         <div className="container">
-          <article className="atlas-strip">
+          <article className="atlas-strip reveal">
             <div>
-              <p className="eyebrow" style={{ color: 'var(--gold)' }}>The full 360 model</p>
+              <p className="eyebrow" style={{ color: 'var(--gold)' }}>The full chain</p>
               <h2>
                 Property + people + platform — the only way it works at scale.
               </h2>
@@ -204,7 +204,7 @@ export default function About() {
               </Link>
             </div>
             <div className="atlas-strip__viz">
-              <h4>The 360 chain</h4>
+              <h4>The chain in five steps</h4>
               <ul>
                 <li><b>Impact</b> sources and underwrites the deal</li>
                 <li><b>Rhema</b> refurbs to cohort spec &amp; runs ongoing maintenance</li>
@@ -219,7 +219,7 @@ export default function About() {
 
       {/* ---- CTA ---- */}
       <section className="section section--primary">
-        <div className="container center" style={{ maxWidth: 760, margin: '0 auto' }}>
+        <div className="container center reveal" style={{ maxWidth: 760, margin: '0 auto' }}>
           <p className="eyebrow">Working with us</p>
           <h2 className="display" style={{ fontSize: 'clamp(28px, 3.6vw, 44px)' }}>
             Looking for a property partner that gets the brief?

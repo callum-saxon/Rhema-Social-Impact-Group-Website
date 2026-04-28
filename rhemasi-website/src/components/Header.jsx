@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { NavLink, Link, useLocation } from 'react-router-dom';
 import { Mail, Menu, X } from 'lucide-react';
-import { LogoFull } from './Logo.jsx';
+import { LogoBadge } from './Logo.jsx';
 
 const links = [
   { to: '/about',          label: 'About' },
@@ -16,14 +16,13 @@ export default function Header() {
   const [open, setOpen] = useState(false);
   const location = useLocation();
 
-  // close mobile menu on route change
   useEffect(() => { setOpen(false); }, [location.pathname]);
 
   return (
     <header className="rh-nav">
       <div className="container rh-nav__inner">
-        <Link to="/" className="rh-logo-link" aria-label="Rhema Social Impact — home" onClick={() => setOpen(false)}>
-          <LogoFull size={48} />
+        <Link to="/" className="rh-logo-link" aria-label="Rhema Social Impact Group — home" onClick={() => setOpen(false)}>
+          <LogoBadge size={56} />
         </Link>
 
         <nav aria-label="Primary">

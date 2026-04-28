@@ -5,7 +5,7 @@ export default function Partners() {
   return (
     <>
       <section className="page-head">
-        <div className="container">
+        <div className="container reveal">
           <p className="eyebrow">Partners</p>
           <h1 className="display">Built on registered-provider partnerships.</h1>
           <p className="lead" style={{ maxWidth: 720 }}>
@@ -17,17 +17,16 @@ export default function Partners() {
         </div>
       </section>
 
-      {/* ---- DAWSON HA ---- */}
       <section className="section">
         <div className="container">
-          <article className="partner" style={{ marginBottom: 'var(--s-7)' }}>
+          <article className="partner reveal" style={{ marginBottom: 'var(--s-7)' }}>
             <div className="partner__seal">
               <b>Dawson<br />Housing<br />Association</b>
               <small>Registered Provider</small>
             </div>
             <div>
               <p className="eyebrow">Lead partner</p>
-              <h2 className="display" style={{ fontSize: 'clamp(28px, 3.4vw, 40px)', color: 'var(--primary)', margin: '0 0 16px' }}>
+              <h2 className="display" style={{ fontSize: 'clamp(28px, 3.4vw, 40px)', margin: '0 0 16px' }}>
                 Dawson Housing Association
               </h2>
               <hr className="gold-rule" />
@@ -49,10 +48,9 @@ export default function Partners() {
         </div>
       </section>
 
-      {/* ---- SISTER BRANDS ---- */}
       <section className="section section--alt">
         <div className="container">
-          <header className="section-head">
+          <header className="section-head reveal">
             <p className="eyebrow">Inside the family</p>
             <h2 className="display">Two sister brands — same mission, different specialism.</h2>
             <hr className="gold-rule" />
@@ -64,7 +62,7 @@ export default function Partners() {
           </header>
 
           <div className="family">
-            <a className="family__card family__card--elevate" href="https://elevatesl.co.uk" target="_blank" rel="noreferrer">
+            <a className="family__card family__card--elevate reveal" href="https://elevatesl.co.uk" target="_blank" rel="noreferrer">
               <div className="family__mark">E</div>
               <h3>Elevate Supported Living</h3>
               <p>
@@ -76,7 +74,7 @@ export default function Partners() {
               <small>elevatesl.co.uk <ArrowUpRight size={14} /></small>
             </a>
 
-            <a className="family__card family__card--impact" href="https://impactig.co.uk" target="_blank" rel="noreferrer">
+            <a className="family__card family__card--impact reveal" data-delay="120" style={{ transitionDelay: '120ms' }} href="https://impactig.co.uk" target="_blank" rel="noreferrer">
               <div className="family__mark">i</div>
               <h3>Impact Investment Group</h3>
               <p>
@@ -87,13 +85,13 @@ export default function Partners() {
               <small>impactig.co.uk <ArrowUpRight size={14} /></small>
             </a>
 
-            <div className="family__card family__card--rhema">
+            <div className="family__card family__card--rhema reveal" data-delay="240" style={{ transitionDelay: '240ms' }}>
               <div className="family__mark">R</div>
               <h3>Rhema Social Impact</h3>
               <p>
                 Property refurbishment, ongoing maintenance and management — partnered
-                with Dawson Housing Association. The property side of the operation
-                — that&rsquo;s us.
+                with Dawson Housing Association. The property side of the operation —
+                that&rsquo;s us.
               </p>
               <small>rhemasi.co.uk · You are here</small>
             </div>
@@ -101,49 +99,36 @@ export default function Partners() {
         </div>
       </section>
 
-      {/* ---- WHO ELSE WE WORK WITH ---- */}
       <section className="section">
         <div className="container">
-          <header className="section-head">
+          <header className="section-head reveal">
             <p className="eyebrow">The wider network</p>
             <h2 className="display">The other people in the chain.</h2>
             <hr className="gold-rule" />
           </header>
 
           <div className="grid-3">
-            <article className="card svc">
+            <article className="card svc reveal">
               <div className="svc__icon"><Building2 size={20} /></div>
               <h3>Local Authorities</h3>
-              <p>
-                Commissioning teams across the East Midlands and the North East — we
-                publish bed availability live, respond to referrals within 24 hours,
-                and report outcomes quarterly.
-              </p>
+              <p>Commissioning teams across the East Midlands and the North East — we publish bed availability live, respond to referrals within 24 hours, and report outcomes quarterly.</p>
             </article>
-            <article className="card svc">
+            <article className="card svc reveal" data-delay="120" style={{ transitionDelay: '120ms' }}>
               <div className="svc__icon"><Handshake size={20} /></div>
               <h3>NHS Trusts</h3>
-              <p>
-                Step-down placements, MDT discharge planning, integrated CMHT working.
-                Where NHS funding is in the picture, we make it visible to the panel.
-              </p>
+              <p>Step-down placements, MDT discharge planning, integrated CMHT working. Where NHS funding is in the picture, we make it visible to the panel.</p>
             </article>
-            <article className="card svc">
+            <article className="card svc reveal" data-delay="240" style={{ transitionDelay: '240ms' }}>
               <div className="svc__icon"><ShieldCheck size={20} /></div>
               <h3>Subcontract trades</h3>
-              <p>
-                Vetted regional teams: NICEIC electricians, Gas Safe plumbers,
-                accredited joiners and decorators. Insurance and accreditation
-                tracked in Atlas — no paperwork lapses, no panic phone calls.
-              </p>
+              <p>Vetted regional teams: NICEIC electricians, Gas Safe plumbers, accredited joiners and decorators. Insurance and accreditation tracked in Atlas.</p>
             </article>
           </div>
         </div>
       </section>
 
-      {/* ---- BECOME A PARTNER ---- */}
       <section className="section section--primary">
-        <div className="container" style={{ display: 'grid', gridTemplateColumns: '1.4fr 1fr', gap: 'var(--s-7)', alignItems: 'center' }}>
+        <div className="container reveal" style={{ display: 'grid', gridTemplateColumns: '1.4fr 1fr', gap: 'var(--s-7)', alignItems: 'center' }}>
           <div>
             <p className="eyebrow">Get involved</p>
             <h2 className="display" style={{ fontSize: 'clamp(28px, 3.4vw, 42px)' }}>

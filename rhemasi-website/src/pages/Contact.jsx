@@ -6,14 +6,13 @@ export default function Contact() {
 
   function handleSubmit(e) {
     e.preventDefault();
-    // Replace with real form handler / API endpoint when going live.
     setSent(true);
   }
 
   return (
     <>
       <section className="page-head">
-        <div className="container">
+        <div className="container reveal">
           <p className="eyebrow">Contact</p>
           <h1 className="display">A property job to scope, or a partnership to build?</h1>
           <p className="lead" style={{ maxWidth: 720 }}>
@@ -27,12 +26,12 @@ export default function Contact() {
       <section className="section">
         <div className="container" style={{ display: 'grid', gridTemplateColumns: '1fr 1.4fr', gap: 'var(--s-7)', alignItems: 'flex-start' }}>
           <aside style={{ display: 'grid', gap: 16 }}>
-            <div className="card">
+            <div className="card reveal">
               <Mail size={20} color="var(--primary)" style={{ marginBottom: 8 }} />
               <h3 style={{ fontFamily: 'var(--font-display)', fontSize: 22, color: 'var(--primary)', margin: '0 0 4px' }}>Email</h3>
               <a href="mailto:hello@rhemasi.co.uk" style={{ color: 'var(--ink-soft)' }}>hello@rhemasi.co.uk</a>
             </div>
-            <div className="card">
+            <div className="card reveal" data-delay="80" style={{ transitionDelay: '80ms' }}>
               <Phone size={20} color="var(--primary)" style={{ marginBottom: 8 }} />
               <h3 style={{ fontFamily: 'var(--font-display)', fontSize: 22, color: 'var(--primary)', margin: '0 0 4px' }}>Phone / WhatsApp</h3>
               <a href="tel:+447539088373" style={{ color: 'var(--ink-soft)' }}>+44 7539 088373</a>
@@ -40,7 +39,7 @@ export default function Contact() {
                 Mon–Fri 8am–6pm. Out-of-hours emergency line for live tenants.
               </p>
             </div>
-            <div className="card">
+            <div className="card reveal" data-delay="160" style={{ transitionDelay: '160ms' }}>
               <MapPin size={20} color="var(--primary)" style={{ marginBottom: 8 }} />
               <h3 style={{ fontFamily: 'var(--font-display)', fontSize: 22, color: 'var(--primary)', margin: '0 0 4px' }}>Operating regions</h3>
               <p style={{ margin: 0, color: 'var(--ink-soft)', lineHeight: 1.6, fontSize: 14 }}>
@@ -48,7 +47,7 @@ export default function Contact() {
                 <b>East Midlands</b> — Nottinghamshire, Derbyshire.
               </p>
             </div>
-            <div className="card">
+            <div className="card reveal" data-delay="240" style={{ transitionDelay: '240ms' }}>
               <Clock size={20} color="var(--primary)" style={{ marginBottom: 8 }} />
               <h3 style={{ fontFamily: 'var(--font-display)', fontSize: 22, color: 'var(--primary)', margin: '0 0 4px' }}>Response time</h3>
               <p style={{ margin: 0, color: 'var(--ink-soft)', lineHeight: 1.6, fontSize: 14 }}>
@@ -57,7 +56,7 @@ export default function Contact() {
             </div>
           </aside>
 
-          <form onSubmit={handleSubmit} className="card" style={{ display: 'grid', gap: 16 }}>
+          <form onSubmit={handleSubmit} className="card reveal" style={{ display: 'grid', gap: 16 }}>
             {sent ? (
               <div style={{ padding: 24, textAlign: 'center' }}>
                 <CheckCircle2 size={48} color="var(--gold-dark)" style={{ margin: '0 auto 16px' }} />
@@ -87,12 +86,13 @@ export default function Contact() {
                     <option>Trade — interested in subcontracting to Rhema</option>
                     <option>Registered Provider — partnership enquiry</option>
                     <option>Property Atlas — platform demo</option>
+                    <option>Ethical investor — supported-homes property fund</option>
                     <option>Other</option>
                   </select>
                 </div>
                 <div className="field">
                   <label htmlFor="msg">Message</label>
-                  <textarea id="msg" name="msg" rows="5" placeholder="Tell us a little about the property or the partnership…" required />
+                  <textarea id="msg" name="msg" rows="5" placeholder="Tell us a little about the property or the partnership..." required />
                 </div>
                 <button className="btn btn--primary" type="submit" style={{ justifyContent: 'center' }}>
                   Send message <Send size={16} />

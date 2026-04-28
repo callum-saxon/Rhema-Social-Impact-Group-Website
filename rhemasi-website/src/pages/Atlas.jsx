@@ -7,7 +7,7 @@ export default function Atlas() {
   return (
     <>
       <section className="page-head">
-        <div className="container">
+        <div className="container reveal">
           <p className="eyebrow">The platform behind us</p>
           <h1 className="display">
             Property Atlas — refurb, maintenance and management on one thread.
@@ -21,10 +21,9 @@ export default function Atlas() {
         </div>
       </section>
 
-      {/* ---- DASHBOARD PREVIEW ---- */}
       <section className="section">
         <div className="container">
-          <div className="dashboard">
+          <div className="dashboard reveal">
             <div className="dashboard__sidebar">
               <div className="active"><LayoutDashboard size={14} /> Property cards</div>
               <div><Hammer size={14} /> Refurb pipeline</div>
@@ -70,54 +69,28 @@ export default function Atlas() {
         </div>
       </section>
 
-      {/* ---- FEATURE GRID ---- */}
       <section className="section section--alt">
         <div className="container">
-          <header className="section-head">
+          <header className="section-head reveal">
             <p className="eyebrow">What Atlas does for property work</p>
             <h2 className="display">Six capabilities. One source of truth.</h2>
             <hr className="gold-rule" />
           </header>
 
           <div className="grid-3">
-            <Feature
-              icon={<ClipboardList size={20} />}
-              h="Refurb workspace"
-              p="Spec, schedule of works, photos, variations, sign-offs — all on one card per property. The investor sees the progress, the operator sees the timeline."
-            />
-            <Feature
-              icon={<Wrench size={20} />}
-              h="Reactive jobs"
-              p="Tenant or operator raises a ticket, Atlas routes to a vetted trade, SLA timer runs. Closure photos required before sign-off."
-            />
-            <Feature
-              icon={<FileCheck size={20} />}
-              h="Statutory schedule"
-              p="Gas, EICR, fire, legionella, EPC. Forward-looking calendar. Alerts at 90/30/7 days. No certificate ever expires unnoticed."
-            />
-            <Feature
-              icon={<BarChart3 size={20} />}
-              h="Spend tracking"
-              p="Refurb budget vs actual. Maintenance spend year-to-date. Investor sees what they own; we see what we run."
-            />
-            <Feature
-              icon={<ShieldCheck size={20} />}
-              h="Trade accreditation"
-              p="NICEIC, Gas Safe, public liability, employer&rsquo;s liability — current expiry tracked. No expired insurance ever leaves Atlas onto a job."
-            />
-            <Feature
-              icon={<Activity size={20} />}
-              h="Handover to Elevate"
-              p="At PC, Atlas produces a handover pack: certificates, snag list, warranties, manuals. Elevate signs it off — and citizen placement opens."
-            />
+            <Feature i={0} icon={<ClipboardList size={20} />} h="Refurb workspace"     p="Spec, schedule of works, photos, variations, sign-offs — all on one card per property." />
+            <Feature i={1} icon={<Wrench size={20} />}        h="Reactive jobs"        p="Tenant or operator raises a ticket, Atlas routes to a vetted trade, SLA timer runs. Closure photos required before sign-off." />
+            <Feature i={2} icon={<FileCheck size={20} />}     h="Statutory schedule"   p="Gas, EICR, fire, legionella, EPC. Forward-looking calendar. Alerts at 90/30/7 days. No certificate ever expires unnoticed." />
+            <Feature i={3} icon={<BarChart3 size={20} />}     h="Spend tracking"       p="Refurb budget vs actual. Maintenance spend year-to-date. Investor sees what they own; we see what we run." />
+            <Feature i={4} icon={<ShieldCheck size={20} />}   h="Trade accreditation"  p="NICEIC, Gas Safe, public liability, employer&rsquo;s liability — current expiry tracked. No expired insurance ever leaves Atlas onto a job." />
+            <Feature i={5} icon={<Activity size={20} />}      h="Handover to Elevate"  p="At PC, Atlas produces a handover pack: certificates, snag list, warranties, manuals. Elevate signs it off — and citizen placement opens." />
           </div>
         </div>
       </section>
 
-      {/* ---- THREE BRANDS, ONE PLATFORM ---- */}
       <section className="section">
         <div className="container">
-          <header className="section-head">
+          <header className="section-head reveal">
             <p className="eyebrow">One platform, three brands</p>
             <h2 className="display">Same data. Different angle for each role.</h2>
             <hr className="gold-rule" />
@@ -129,40 +102,30 @@ export default function Atlas() {
           </header>
 
           <div className="grid-3">
-            <article className="card svc">
+            <article className="card svc reveal">
               <div className="svc__icon" style={{ background: 'linear-gradient(135deg, #0E3F4A, #163A45)' }}>
                 <Activity size={20} />
               </div>
               <h3 style={{ color: '#0E3F4A' }}>Elevate sees</h3>
-              <p>
-                Live bed availability, citizen placements, statutory compliance status
-                per property. The data the registered manager needs to evidence safe operations.
-              </p>
+              <p>Live bed availability, citizen placements, statutory compliance status per property. The data the registered manager needs to evidence safe operations.</p>
             </article>
-            <article className="card svc">
+            <article className="card svc reveal" data-delay="120" style={{ transitionDelay: '120ms' }}>
               <h3>Rhema sees</h3>
-              <p>
-                Refurb pipeline, reactive job queue, statutory schedule, accredited
-                trade list, spend vs budget. The full property workbench.
-              </p>
+              <p>Refurb pipeline, reactive job queue, statutory schedule, accredited trade list, spend vs budget. The full property workbench.</p>
             </article>
-            <article className="card svc">
+            <article className="card svc reveal" data-delay="240" style={{ transitionDelay: '240ms' }}>
               <div className="svc__icon" style={{ background: 'linear-gradient(135deg, #0F1B36, #1A2950)' }}>
                 <BarChart3 size={20} />
               </div>
               <h3 style={{ color: '#0F1B36' }}>Impact sees</h3>
-              <p>
-                Live deals, risk scoring, investor-facing property cards, gross/net
-                yield, monthly statements. The commercial side of the operation.
-              </p>
+              <p>Live deals, risk scoring, investor-facing property cards, gross/net yield, monthly statements. The commercial side of the operation.</p>
             </article>
           </div>
         </div>
       </section>
 
-      {/* ---- ALERTS & NOTIFICATIONS ---- */}
       <section className="section section--earth">
-        <div className="container" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 'var(--s-7)', alignItems: 'center' }}>
+        <div className="container reveal" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 'var(--s-7)', alignItems: 'center' }}>
           <div>
             <p className="eyebrow">Never miss a beat</p>
             <h2 className="display" style={{ fontSize: 'clamp(28px, 3.4vw, 42px)' }}>
@@ -174,7 +137,7 @@ export default function Atlas() {
               system flags it; we deal with it; the property card stays green.
             </p>
           </div>
-          <div className="card" style={{ background: 'rgba(0,0,0,0.18)', border: '1px solid rgba(201,168,76,0.30)' }}>
+          <div className="card" style={{ background: 'rgba(0,0,0,0.18)', border: '1px solid rgba(232,168,124,0.30)' }}>
             <div style={{ display: 'flex', flexDirection: 'column', gap: 12, color: 'var(--on-primary)' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
                 <AlertTriangle size={18} color="var(--gold-light)" />
@@ -198,7 +161,7 @@ export default function Atlas() {
       </section>
 
       <section className="section section--primary">
-        <div className="container" style={{ maxWidth: 820, margin: '0 auto', textAlign: 'center' }}>
+        <div className="container reveal" style={{ maxWidth: 820, margin: '0 auto', textAlign: 'center' }}>
           <p className="eyebrow">One platform. Three brands. Every detail.</p>
           <h2 className="display" style={{ fontSize: 'clamp(28px, 3.6vw, 44px)' }}>
             Property Atlas is the difference.
@@ -217,9 +180,9 @@ export default function Atlas() {
   );
 }
 
-function Feature({ icon, h, p }) {
+function Feature({ icon, h, p, i = 0 }) {
   return (
-    <article className="card svc">
+    <article className="card svc reveal" data-delay={i * 80} style={{ transitionDelay: `${i * 80}ms` }}>
       <div className="svc__icon">{icon}</div>
       <h3>{h}</h3>
       <p dangerouslySetInnerHTML={{ __html: p }} />
