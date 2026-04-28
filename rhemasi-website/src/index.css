@@ -73,7 +73,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-img, svg, video { display: block; max-width: 100%; }
+img, video { display: block; max-width: 100%; } svg { display: inline-block; max-width: 100%; vertical-align: middle; flex-shrink: 0; }
 a { color: inherit; text-decoration: none; }
 button { font: inherit; cursor: pointer; border: 0; background: none; color: inherit; }
 hr { border: 0; height: 1px; background: var(--line); margin: var(--s-6) 0; }
@@ -1620,3 +1620,35 @@ hr { border: 0; height: 1px; background: var(--line); margin: var(--s-6) 0; }
 }
 .rh-logo-link img,
 .rh-logo-link svg { display: block; }
+
+/* uk-map quicklist trend icon column */
+.uk-map__quickitem {
+  display: grid;
+  grid-template-columns: 16px 1fr auto;
+  gap: 10px;
+  align-items: center;
+}
+.uk-map__quick-trend {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--ink-mute);
+}
+.uk-map__quickitem.is-active .uk-map__quick-trend { color: var(--gold-dark); }
+
+/* explicit panel-src icon size */
+.uk-map__panel-src svg { width: 14px; height: 14px; }
+
+/* lucide icons inside buttons / cards behave inline */
+.btn svg, .card svg, .field svg, .footer svg,
+.dashboard svg, .invest-strip__bullets svg,
+.atlas-mini svg, .stat-card svg, .ps-card svg,
+.headline-stat svg, .service-tile svg,
+.uk-map__panel svg, .rh-nav svg {
+  display: inline-block;
+  flex-shrink: 0;
+  vertical-align: middle;
+}
+
+/* badge logo / map svg keep block */
+.uk-map__svg, .rh-logo-badge-img { display: block; }
