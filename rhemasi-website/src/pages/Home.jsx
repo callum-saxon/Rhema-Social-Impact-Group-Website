@@ -289,4 +289,11 @@ export default function Home() {
             </div>
             <div className="cta-banner__actions">
               <Link className="btn btn--gold" to="/contact">Talk to us <ArrowRight size={16} /></Link>
-              <Link className="btn btn--ghost" to="/services">See our s                                                                                     
+              <Link className="btn btn--ghost" to="/services">See our services</Link>
+            </div>
+          </article>
+        </div>
+      </section>
+    </>
+  );
+}
