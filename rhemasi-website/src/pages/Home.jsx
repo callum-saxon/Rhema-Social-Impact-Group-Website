@@ -12,7 +12,6 @@ import HeadlineStats from '../components/HeadlineStats.jsx';
 export default function Home() {
   return (
     <>
-      {/* ---- HERO ---- */}
       <section className="hero">
         <div className="container hero__grid">
           <div className="fade-up">
@@ -38,7 +37,7 @@ export default function Home() {
           </div>
 
           <aside className="metrics fade-up" style={{ animationDelay: '120ms' }}>
-            <p className="eyebrow" style={{ margin: 0 }}>Our 2024–25 goal</p>
+            <p className="eyebrow" style={{ margin: 0 }}>Our 2024-25 goal</p>
             <hr className="gold-rule" />
             <dl>
               <div><dt>Properties to deliver</dt><dd>1,000+</dd></div>
@@ -50,17 +49,13 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ---- HEADLINE STATS — big numbers band ---- */}
       <HeadlineStats />
 
-      {/* ---- THE SCALE OF THE NEED ---- */}
       <section className="section section--alt">
         <div className="container">
           <header className="section-head">
             <p className="eyebrow">The scale of the need</p>
-            <h2 className="display">
-              The UK has a chronic shortage of suitable homes.
-            </h2>
+            <h2 className="display">The UK has a chronic shortage of suitable homes.</h2>
             <hr className="gold-rule" />
             <p className="lead">
               The figures below describe the people Rhema and our partners exist
@@ -71,69 +66,18 @@ export default function Home() {
           </header>
 
           <div className="stat-grid">
-            <StatCard
-              icon={Users}
-              number="227,000"
-              label="People in the worst forms of homelessness — rough sleeping, sheds, B&Bs"
-              source="Crisis, 2021"
-              sourceUrl="https://www.crisis.org.uk/ending-homelessness/homelessness-knowledge-hub/"
-            />
-            <StatCard
-              icon={Hotel}
-              number="96,060"
-              label="Households living in temporary accommodation in England"
-              source="gov.uk live tables"
-              sourceUrl="https://www.gov.uk/government/statistical-data-sets/live-tables-on-homelessness"
-            />
-            <StatCard
-              icon={Baby}
-              number="121,680"
-              label="Dependent children housed in temporary accommodation"
-              source="gov.uk live tables"
-              sourceUrl="https://www.gov.uk/government/statistical-data-sets/live-tables-on-homelessness"
-              accent
-            />
-            <StatCard
-              icon={HomeIcon}
-              number="9,780"
-              label="Households placed in B&B-style accommodation"
-              source="gov.uk live tables"
-              sourceUrl="https://www.gov.uk/government/statistical-data-sets/live-tables-on-homelessness"
-            />
-            <StatCard
-              icon={AlertCircle}
-              number="1,530"
-              label="Families with dependent children in B&Bs — some living there for years"
-              source="Shelter, 2022"
-              sourceUrl="https://england.shelter.org.uk/media/press_releases"
-            />
-            <StatCard
-              icon={TrendingUp}
-              number="430%"
-              label="Rise in council spend on B&Bs for homeless people over 5 years"
-              source="Local Government Association"
-              sourceUrl="https://www.local.gov.uk/about/news/lga-430-increase-bb-spend-people-who-are-homeless-reveals-urgency-more-social-housing"
-              accent
-            />
-            <StatCard
-              icon={Hospital}
-              number="2,000+"
-              label="Mental health patients delayed in hospital due to no community housing"
-              source="NHS England Discharge Data"
-              sourceUrl="https://www.england.nhs.uk/statistics/statistical-work-areas/discharge-delays-acute-data/"
-            />
-            <StatCard
-              icon={HandHeart}
-              number="1.3M+"
-              label="Households on local-authority social housing waiting lists"
-              source="Shelter / gov.uk"
-              sourceUrl="https://england.shelter.org.uk/professional_resources/policy_and_research/policy_library/over_a_million_households_on_social_housing_waiting_list_at_a_time_when_only_a_handful_of_social_homes_being_built"
-            />
+            <StatCard icon={Users} number="227,000" label="People in the worst forms of homelessness — rough sleeping, sheds, B&Bs" source="Crisis, 2021" sourceUrl="https://www.crisis.org.uk/ending-homelessness/homelessness-knowledge-hub/" />
+            <StatCard icon={Hotel} number="96,060" label="Households living in temporary accommodation in England" source="gov.uk live tables" sourceUrl="https://www.gov.uk/government/statistical-data-sets/live-tables-on-homelessness" />
+            <StatCard icon={Baby} number="121,680" label="Dependent children housed in temporary accommodation" source="gov.uk live tables" sourceUrl="https://www.gov.uk/government/statistical-data-sets/live-tables-on-homelessness" accent />
+            <StatCard icon={HomeIcon} number="9,780" label="Households placed in B&B-style accommodation" source="gov.uk live tables" sourceUrl="https://www.gov.uk/government/statistical-data-sets/live-tables-on-homelessness" />
+            <StatCard icon={AlertCircle} number="1,530" label="Families with dependent children in B&Bs — some living there for years" source="Shelter, 2022" sourceUrl="https://england.shelter.org.uk/media/press_releases" />
+            <StatCard icon={TrendingUp} number="430%" label="Rise in council spend on B&Bs for homeless people over 5 years" source="Local Government Association" sourceUrl="https://www.local.gov.uk/about/news/lga-430-increase-bb-spend-people-who-are-homeless-reveals-urgency-more-social-housing" accent />
+            <StatCard icon={Hospital} number="2,000+" label="Mental health patients delayed in hospital due to no community housing" source="NHS England" sourceUrl="https://www.england.nhs.uk/statistics/statistical-work-areas/discharge-delays-acute-data/" />
+            <StatCard icon={HandHeart} number="1.3M+" label="Households on local-authority social housing waiting lists" source="Shelter / gov.uk" sourceUrl="https://england.shelter.org.uk/professional_resources/policy_and_research/policy_library" />
           </div>
         </div>
       </section>
 
-      {/* ---- REGIONAL BREAKDOWN ---- */}
       <section className="section">
         <div className="container">
           <header className="section-head">
@@ -147,12 +91,10 @@ export default function Home() {
               figure and source.
             </p>
           </header>
-
           <UKMap />
         </div>
       </section>
 
-      {/* ---- PROBLEM / SOLUTION ---- */}
       <section className="section section--alt">
         <div className="container">
           <header className="section-head" style={{ maxWidth: 820 }}>
@@ -189,7 +131,7 @@ export default function Home() {
                 a decent-homes-plus standard. We partner with registered
                 providers, charities and care providers to deliver supported
                 accommodation, family-assessment homes, step-down transitions
-                and 16–18 semi-independent placements &mdash; backed by Property
+                and 16-18 semi-independent placements &mdash; backed by Property
                 Atlas, our compliance and operations platform.
               </p>
             </article>
@@ -209,25 +151,18 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ---- INVESTOR CTA STRIP ---- */}
       <section className="section">
         <div className="container">
           <article className="invest-strip">
             <div className="invest-strip__copy">
-              <p className="eyebrow" style={{ color: 'var(--gold-light)' }}>
-                For ethical investors
-              </p>
-              <h2>
-                A property fund that changes lives <em>and</em> earns a fixed return.
-              </h2>
+              <p className="eyebrow" style={{ color: 'var(--gold-light)' }}>For ethical investors</p>
+              <h2>A property fund that changes lives <em>and</em> earns a fixed return.</h2>
               <p>
                 Through our supported-homes property fund, an investor club
                 with a social impact acquires a portfolio of properties that
                 house vulnerable individuals and families. Investors receive
                 first charge on each property and a fixed return on their
-                investment. We deliver the operational side &mdash; refurb,
-                maintenance, lease compliance and reporting &mdash; through our
-                Property Atlas platform.
+                investment.
               </p>
               <Link className="btn btn--gold" to="/contact">
                 Talk to us about the fund <ArrowRight size={16} />
@@ -244,7 +179,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ---- WHAT WE DELIVER ---- */}
       <section className="section section--alt">
         <div className="container">
           <header className="section-head">
@@ -272,7 +206,7 @@ export default function Home() {
             <article className="service-tile">
               <div className="service-tile__icon"><HeartHandshake size={20} /></div>
               <h3>Supported &amp; semi-independent</h3>
-              <p>Permanent supported tenancies, step-down transition homes, and 16–18 semi-independent placements for care leavers.</p>
+              <p>Permanent supported tenancies, step-down transition homes, and 16-18 semi-independent placements for care leavers.</p>
             </article>
             <article className="service-tile">
               <div className="service-tile__icon"><Building2 size={20} /></div>
@@ -287,13 +221,12 @@ export default function Home() {
             <article className="service-tile">
               <div className="service-tile__icon"><HandHeart size={20} /></div>
               <h3>Wrap-around support</h3>
-              <p>Mental health, addiction and trauma support; employment and training; tenancy-sustainment work — delivered with our partners.</p>
+              <p>Mental health, addiction and trauma support; employment and training; tenancy-sustainment work.</p>
             </article>
           </div>
         </div>
       </section>
 
-      {/* ---- PROPERTY ATLAS — small section ---- */}
       <section className="section">
         <div className="container">
           <article className="atlas-mini">
@@ -332,7 +265,7 @@ export default function Home() {
                 <div className="atlas-mini__row">
                   <span className="atlas-mini__dot atlas-mini__dot--ok" />
                   <span className="atlas-mini__name">21 Whitlock St &middot; spend</span>
-                  <span className="atlas-mini__pill atlas-mini__pill--ok">−4% vs budget</span>
+                  <span className="atlas-mini__pill atlas-mini__pill--ok">-4% vs budget</span>
                 </div>
               </div>
             </div>
@@ -340,15 +273,12 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ---- CLOSING CTA ---- */}
       <section className="section">
         <div className="container">
           <article className="cta-banner">
             <div>
               <p className="eyebrow">Start a conversation</p>
-              <h3>
-                Whether you commission, refer, partner or invest &mdash; let&rsquo;s talk.
-              </h3>
+              <h3>Whether you commission, refer, partner or invest &mdash; let&rsquo;s talk.</h3>
               <p>
                 Local authorities, NHS Trusts, charities, registered providers
                 and ethical investors &mdash; if our work fits your model, we
