@@ -14,7 +14,7 @@ export default function Home() {
     <>
       <section className="hero">
         <div className="container hero__grid">
-          <div className="fade-up">
+          <div className="reveal">
             <p className="eyebrow">Life-changing housing solutions</p>
             <h1 className="display">
               A home is the start of <em>every</em> recovery.
@@ -36,7 +36,7 @@ export default function Home() {
             </div>
           </div>
 
-          <aside className="metrics fade-up" style={{ animationDelay: '120ms' }}>
+          <aside className="metrics reveal" data-delay="120" style={{ transitionDelay: '120ms' }}>
             <p className="eyebrow" style={{ margin: 0 }}>Our 2024-25 goal</p>
             <hr className="gold-rule" />
             <dl>
@@ -53,7 +53,7 @@ export default function Home() {
 
       <section className="section section--alt">
         <div className="container">
-          <header className="section-head">
+          <header className="section-head reveal">
             <p className="eyebrow">The scale of the need</p>
             <h2 className="display">The UK has a chronic shortage of suitable homes.</h2>
             <hr className="gold-rule" />
@@ -66,38 +66,36 @@ export default function Home() {
           </header>
 
           <div className="stat-grid">
-            <StatCard icon={Users} number="227,000" label="People in the worst forms of homelessness — rough sleeping, sheds, B&Bs" source="Crisis, 2021" sourceUrl="https://www.crisis.org.uk/ending-homelessness/homelessness-knowledge-hub/" />
-            <StatCard icon={Hotel} number="96,060" label="Households living in temporary accommodation in England" source="gov.uk live tables" sourceUrl="https://www.gov.uk/government/statistical-data-sets/live-tables-on-homelessness" />
-            <StatCard icon={Baby} number="121,680" label="Dependent children housed in temporary accommodation" source="gov.uk live tables" sourceUrl="https://www.gov.uk/government/statistical-data-sets/live-tables-on-homelessness" accent />
-            <StatCard icon={HomeIcon} number="9,780" label="Households placed in B&B-style accommodation" source="gov.uk live tables" sourceUrl="https://www.gov.uk/government/statistical-data-sets/live-tables-on-homelessness" />
-            <StatCard icon={AlertCircle} number="1,530" label="Families with dependent children in B&Bs — some living there for years" source="Shelter, 2022" sourceUrl="https://england.shelter.org.uk/media/press_releases" />
-            <StatCard icon={TrendingUp} number="430%" label="Rise in council spend on B&Bs for homeless people over 5 years" source="Local Government Association" sourceUrl="https://www.local.gov.uk/about/news/lga-430-increase-bb-spend-people-who-are-homeless-reveals-urgency-more-social-housing" accent />
-            <StatCard icon={Hospital} number="2,000+" label="Mental health patients delayed in hospital due to no community housing" source="NHS England" sourceUrl="https://www.england.nhs.uk/statistics/statistical-work-areas/discharge-delays-acute-data/" />
-            <StatCard icon={HandHeart} number="1.3M+" label="Households on local-authority social housing waiting lists" source="Shelter / gov.uk" sourceUrl="https://england.shelter.org.uk/professional_resources/policy_and_research/policy_library" />
+            <div className="reveal" data-delay="0"   style={{ transitionDelay: '0ms'   }}><StatCard icon={Users}      number="227,000" label="People in the worst forms of homelessness — rough sleeping, sheds, B&Bs" source="Crisis, 2021" sourceUrl="https://www.crisis.org.uk/ending-homelessness/homelessness-knowledge-hub/" /></div>
+            <div className="reveal" data-delay="80"  style={{ transitionDelay: '80ms'  }}><StatCard icon={Hotel}      number="96,060"  label="Households living in temporary accommodation in England" source="gov.uk live tables" sourceUrl="https://www.gov.uk/government/statistical-data-sets/live-tables-on-homelessness" /></div>
+            <div className="reveal" data-delay="160" style={{ transitionDelay: '160ms' }}><StatCard icon={Baby}       number="121,680" label="Dependent children housed in temporary accommodation" source="gov.uk live tables" sourceUrl="https://www.gov.uk/government/statistical-data-sets/live-tables-on-homelessness" accent /></div>
+            <div className="reveal" data-delay="240" style={{ transitionDelay: '240ms' }}><StatCard icon={HomeIcon}   number="9,780"   label="Households placed in B&B-style accommodation" source="gov.uk live tables" sourceUrl="https://www.gov.uk/government/statistical-data-sets/live-tables-on-homelessness" /></div>
+            <div className="reveal" data-delay="0"   style={{ transitionDelay: '0ms'   }}><StatCard icon={AlertCircle} number="1,530"  label="Families with dependent children in B&Bs — some living there for years" source="Shelter, 2022" sourceUrl="https://england.shelter.org.uk/media/press_releases" /></div>
+            <div className="reveal" data-delay="80"  style={{ transitionDelay: '80ms'  }}><StatCard icon={TrendingUp} number="430%"   label="Rise in council spend on B&Bs for homeless people over 5 years" source="Local Government Association" sourceUrl="https://www.local.gov.uk/about/news/lga-430-increase-bb-spend-people-who-are-homeless-reveals-urgency-more-social-housing" accent /></div>
+            <div className="reveal" data-delay="160" style={{ transitionDelay: '160ms' }}><StatCard icon={Hospital}   number="2,000+" label="Mental health patients delayed in hospital due to no community housing" source="NHS England" sourceUrl="https://www.england.nhs.uk/statistics/statistical-work-areas/discharge-delays-acute-data/" /></div>
+            <div className="reveal" data-delay="240" style={{ transitionDelay: '240ms' }}><StatCard icon={HandHeart}  number="1.3M+"  label="Households on local-authority social housing waiting lists" source="Shelter / gov.uk" sourceUrl="https://england.shelter.org.uk/professional_resources/policy_and_research/policy_library" /></div>
           </div>
         </div>
       </section>
 
       <section className="section">
         <div className="container">
-          <header className="section-head">
+          <header className="section-head reveal">
             <p className="eyebrow">Where the pressure is</p>
             <h2 className="display">A national problem with regional hotspots.</h2>
             <hr className="gold-rule" />
             <p className="lead">
-              London accounts for over half of all temporary-accommodation
-              households in England. Scotland, Wales and the West Midlands carry
-              the next-largest concentrations. Hover any region for the latest
-              figure and source.
+              Hover any region for a quick read. Click to pin a region and see the
+              local-authority detail. Trend arrows show year-on-year direction.
             </p>
           </header>
-          <UKMap />
+          <div className="reveal"><UKMap /></div>
         </div>
       </section>
 
       <section className="section section--alt">
         <div className="container">
-          <header className="section-head" style={{ maxWidth: 820 }}>
+          <header className="section-head reveal" style={{ maxWidth: 820 }}>
             <p className="eyebrow">Social impact investing</p>
             <h2 className="display">Capital with a social purpose.</h2>
             <hr className="gold-rule" />
@@ -110,7 +108,7 @@ export default function Home() {
           </header>
 
           <div className="problem-solution">
-            <article className="ps-card ps-card--problem fade-up">
+            <article className="ps-card ps-card--problem reveal">
               <div className="ps-card__icon"><AlertCircle size={22} /></div>
               <h3>The problem</h3>
               <p>
@@ -123,7 +121,7 @@ export default function Home() {
               </p>
             </article>
 
-            <article className="ps-card ps-card--what fade-up" style={{ animationDelay: '120ms' }}>
+            <article className="ps-card ps-card--what reveal" data-delay="120" style={{ transitionDelay: '120ms' }}>
               <div className="ps-card__icon"><Target size={22} /></div>
               <h3>What we do</h3>
               <p>
@@ -136,7 +134,7 @@ export default function Home() {
               </p>
             </article>
 
-            <article className="ps-card ps-card--how fade-up" style={{ animationDelay: '240ms' }}>
+            <article className="ps-card ps-card--how reveal" data-delay="240" style={{ transitionDelay: '240ms' }}>
               <div className="ps-card__icon"><Sparkles size={22} /></div>
               <h3>How it fixes it</h3>
               <p>
@@ -153,7 +151,7 @@ export default function Home() {
 
       <section className="section">
         <div className="container">
-          <article className="invest-strip">
+          <article className="invest-strip reveal">
             <div className="invest-strip__copy">
               <p className="eyebrow" style={{ color: 'var(--gold-light)' }}>For ethical investors</p>
               <h2>A property fund that changes lives <em>and</em> earns a fixed return.</h2>
@@ -181,7 +179,7 @@ export default function Home() {
 
       <section className="section section--alt">
         <div className="container">
-          <header className="section-head">
+          <header className="section-head reveal">
             <p className="eyebrow">What we deliver</p>
             <h2 className="display">A full housing-with-support pathway.</h2>
             <hr className="gold-rule" />
@@ -193,32 +191,32 @@ export default function Home() {
           </header>
 
           <div className="services-grid">
-            <article className="service-tile">
+            <article className="service-tile reveal">
               <div className="service-tile__icon"><HomeIcon size={20} /></div>
               <h3>Emergency &amp; temp accommodation</h3>
               <p>A positive alternative to B&amp;B and hotel placements, with a permanent housing pathway from day one.</p>
             </article>
-            <article className="service-tile">
+            <article className="service-tile reveal" data-delay="80" style={{ transitionDelay: '80ms' }}>
               <div className="service-tile__icon"><Users size={20} /></div>
               <h3>Family &amp; individual assessment homes</h3>
               <p>Safe, suitable settings for assessment placements with safeguarding partners and local authorities.</p>
             </article>
-            <article className="service-tile">
+            <article className="service-tile reveal" data-delay="160" style={{ transitionDelay: '160ms' }}>
               <div className="service-tile__icon"><HeartHandshake size={20} /></div>
               <h3>Supported &amp; semi-independent</h3>
               <p>Permanent supported tenancies, step-down transition homes, and 16-18 semi-independent placements for care leavers.</p>
             </article>
-            <article className="service-tile">
+            <article className="service-tile reveal" data-delay="0" style={{ transitionDelay: '0ms' }}>
               <div className="service-tile__icon"><Building2 size={20} /></div>
               <h3>Property sourcing &amp; refurb</h3>
               <p>Acquisition, refurb to decent-homes-plus standard, and ongoing planned + reactive maintenance.</p>
             </article>
-            <article className="service-tile">
+            <article className="service-tile reveal" data-delay="80" style={{ transitionDelay: '80ms' }}>
               <div className="service-tile__icon"><ShieldCheck size={20} /></div>
               <h3>Compliance &amp; reporting</h3>
               <p>Statutory inspection schedules, certificate management and an investor-portal handoff for owners.</p>
             </article>
-            <article className="service-tile">
+            <article className="service-tile reveal" data-delay="160" style={{ transitionDelay: '160ms' }}>
               <div className="service-tile__icon"><HandHeart size={20} /></div>
               <h3>Wrap-around support</h3>
               <p>Mental health, addiction and trauma support; employment and training; tenancy-sustainment work.</p>
@@ -229,7 +227,7 @@ export default function Home() {
 
       <section className="section">
         <div className="container">
-          <article className="atlas-mini">
+          <article className="atlas-mini reveal">
             <div className="atlas-mini__copy">
               <p className="eyebrow">Sister platform</p>
               <h3>Powered by Property Atlas.</h3>
@@ -275,7 +273,7 @@ export default function Home() {
 
       <section className="section">
         <div className="container">
-          <article className="cta-banner">
+          <article className="cta-banner reveal">
             <div>
               <p className="eyebrow">Start a conversation</p>
               <h3>Whether you commission, refer, partner or invest &mdash; let&rsquo;s talk.</h3>
