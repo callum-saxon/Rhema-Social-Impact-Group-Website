@@ -37,12 +37,12 @@ export default function Home() {
           </div>
 
           <aside className="metrics reveal" data-delay="120" style={{ transitionDelay: '120ms' }}>
-            <p className="eyebrow" style={{ margin: 0 }}>Our 2024-25 goal</p>
+            <p className="eyebrow" style={{ margin: 0 }}>Our current mission</p>
             <hr className="gold-rule" />
             <dl>
-              <div><dt>Properties to deliver</dt><dd>1,000+</dd></div>
-              <div><dt>People housed</dt><dd>3,000</dd></div>
-              <div><dt>Housing partners</dt><dd>13+</dd></div>
+              <div><dt>Properties pipeline</dt><dd>1,000+</dd></div>
+              <div><dt>Lives changed</dt><dd>3,000+</dd></div>
+              <div><dt>Housing partners</dt><dd>15+</dd></div>
               <div><dt>Decent homes standard</dt><dd>100%</dd></div>
             </dl>
           </aside>
@@ -66,11 +66,11 @@ export default function Home() {
           </header>
 
           <div className="stat-grid">
-            <div className="reveal" data-delay="0"   style={{ transitionDelay: '0ms'   }}><StatCard icon={Users}      number="227,000" label="People in the worst forms of homelessness — rough sleeping, sheds, B&Bs" source="Crisis, 2021" sourceUrl="https://www.crisis.org.uk/ending-homelessness/homelessness-knowledge-hub/" /></div>
+            <div className="reveal" data-delay="0"   style={{ transitionDelay: '0ms'   }}><StatCard icon={Users}      number="227,000" label="People in the worst forms of homelessness — rough sleeping, sheds, B&Bs" source="Crisis" sourceUrl="https://www.crisis.org.uk/ending-homelessness/homelessness-knowledge-hub/" /></div>
             <div className="reveal" data-delay="80"  style={{ transitionDelay: '80ms'  }}><StatCard icon={Hotel}      number="96,060"  label="Households living in temporary accommodation in England" source="gov.uk live tables" sourceUrl="https://www.gov.uk/government/statistical-data-sets/live-tables-on-homelessness" /></div>
             <div className="reveal" data-delay="160" style={{ transitionDelay: '160ms' }}><StatCard icon={Baby}       number="121,680" label="Dependent children housed in temporary accommodation" source="gov.uk live tables" sourceUrl="https://www.gov.uk/government/statistical-data-sets/live-tables-on-homelessness" accent /></div>
             <div className="reveal" data-delay="240" style={{ transitionDelay: '240ms' }}><StatCard icon={HomeIcon}   number="9,780"   label="Households placed in B&B-style accommodation" source="gov.uk live tables" sourceUrl="https://www.gov.uk/government/statistical-data-sets/live-tables-on-homelessness" /></div>
-            <div className="reveal" data-delay="0"   style={{ transitionDelay: '0ms'   }}><StatCard icon={AlertCircle} number="1,530"  label="Families with dependent children in B&Bs — some living there for years" source="Shelter, 2022" sourceUrl="https://england.shelter.org.uk/media/press_releases" /></div>
+            <div className="reveal" data-delay="0"   style={{ transitionDelay: '0ms'   }}><StatCard icon={AlertCircle} number="1,530"  label="Families with dependent children in B&Bs — some living there for years" source="Shelter" sourceUrl="https://england.shelter.org.uk/media/press_releases" /></div>
             <div className="reveal" data-delay="80"  style={{ transitionDelay: '80ms'  }}><StatCard icon={TrendingUp} number="430%"   label="Rise in council spend on B&Bs for homeless people over 5 years" source="Local Government Association" sourceUrl="https://www.local.gov.uk/about/news/lga-430-increase-bb-spend-people-who-are-homeless-reveals-urgency-more-social-housing" accent /></div>
             <div className="reveal" data-delay="160" style={{ transitionDelay: '160ms' }}><StatCard icon={Hospital}   number="2,000+" label="Mental health patients delayed in hospital due to no community housing" source="NHS England" sourceUrl="https://www.england.nhs.uk/statistics/statistical-work-areas/discharge-delays-acute-data/" /></div>
             <div className="reveal" data-delay="240" style={{ transitionDelay: '240ms' }}><StatCard icon={HandHeart}  number="1.3M+"  label="Households on local-authority social housing waiting lists" source="Shelter / gov.uk" sourceUrl="https://england.shelter.org.uk/professional_resources/policy_and_research/policy_library" /></div>

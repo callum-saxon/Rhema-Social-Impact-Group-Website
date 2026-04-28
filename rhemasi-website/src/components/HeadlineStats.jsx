@@ -5,7 +5,7 @@ const HEADLINES = [
     to: 227000,
     format: (n) => `${Math.round(n / 1000)}k`,
     label: 'people in the worst forms of homelessness in the UK',
-    source: 'Crisis, 2021',
+    source: 'Crisis',
     sourceUrl: 'https://www.crisis.org.uk/ending-homelessness/homelessness-knowledge-hub/',
   },
   {
